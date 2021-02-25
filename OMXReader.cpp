@@ -191,6 +191,7 @@ bool OMXReader::Open(std::string filename, bool dump_format, bool live /* =false
 
   // if format can be nonblocking, let's use that
   m_pFormatContext->flags |= AVFMT_FLAG_NONBLOCK;
+  m_pFormatContext->flags |= AVFMT_FLAG_NOBUFFER;
 
   // strip off file://
   if(m_filename.substr(0, 7) == "file://" )
